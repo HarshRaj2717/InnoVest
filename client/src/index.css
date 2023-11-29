@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.svg-icon {
+  fill: black;
+  transition: fill 0.3s ease;
+}
+
+.svg-icon:hover {
+  fill: white; /* Change the color on hover */
+}

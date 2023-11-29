@@ -7,7 +7,7 @@ function Hero() {
         <div className="max-w-screen">
           <h1 className="text-9xl font-bold">InnoVest</h1>
           <p className="py-6 text-2xl">Innovate - Invest - Inspire</p>
-          <a className="btn btn-outline btn-circle" href="#dashboard">
+          <a className="btn btn-outline btn-circle svg-icon" href="#dashboard">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="16"

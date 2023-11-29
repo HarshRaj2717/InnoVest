@@ -9,6 +9,8 @@ import Home from './components/home';
 // import Login from './components/login';
 import Register from './components/register.js';
 import Loginpage from './components/nn.js';
+import BizzGPT from './components/bizzgpt.js';
+import Evaluate from './components/evaluate.js';
 export const serverurl="http://localhost:8000"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,6 +22,8 @@ root.render(
       <Route path='/home' element={<Home />} />
       <Route path='/register' element={<Register />} />
       <Route path='/login' element={<Loginpage />} />
+      <Route path='/bizzgpt' element={<BizzGPT />} />
+      <Route path='/evaluate' element={<Evaluate />} />
     </Routes>
   </Router>
   // <React.StrictMode>

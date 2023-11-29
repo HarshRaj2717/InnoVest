@@ -37,7 +37,10 @@ const Navbar = () => {
             </li>
             <li>
               <Link to={"/showcase"}>Idea Showcase</Link>
-            </li>{" "}
+            </li>
+            <li>
+              <Link to={"/news"}>News</Link>
+            </li>
           </ul>
         </div>
         <Link to={"/home"} className="btn btn-ghost text-xl">
@@ -61,10 +64,15 @@ const Navbar = () => {
           <li>
             <Link to={"/showcase"}>Idea Showcase</Link>
           </li>
+          <li>
+            <Link to={"/news"}>News</Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn" to="/login">LOGIN/SIGNUP</Link>
+        <Link className="btn" to="/login">
+          LOGIN/SIGNUP
+        </Link>
       </div>
     </div>
   );
