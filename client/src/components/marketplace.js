@@ -98,17 +98,17 @@ export default function Marketplace() {
 
   return (
     <div className="bg-base-200 min-h-screen">
+      <div className="flex space-x-2 p-4 justify-center">
+        <Tag label="All" onClick={() => setSelectedTags([])} />
+        <div className="tag-divider">|</div>
+        {allTags.map((tag, index) => (
+          <React.Fragment key={index}>
+            <Tag label={tag} onClick={() => handleTagClick(tag)} />
+            <div className="tag-divider">|</div>
+          </React.Fragment>
+        ))}
+      </div>
       <div className="flex justify-center flex-wrap">
-        <div className="flex space-x-2 mt-4">
-          <Tag label="All" onClick={() => setSelectedTags([])} />
-          <div className="tag-divider">|</div>
-          {allTags.map((tag, index) => (
-            <React.Fragment key={index}>
-              <Tag label={tag} onClick={() => handleTagClick(tag)} />
-              <div className="tag-divider">|</div>
-            </React.Fragment>
-          ))}
-        </div>
         {filteredStartups.map((startup, index) => (
           <StartupCard key={index} {...startup} />
         ))}
