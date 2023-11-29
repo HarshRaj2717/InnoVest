@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 const Features = () => {
     return (
 
-        <section className='feature-container' > 
-            <div class="container-fluid">
+        <section className='feature-container !mt-24 ' > 
+            <div class="container-fluid flex justify-between">
                 <div class="container">
                     <div class="row hello">
                         <div class="col-sm-4 ji">
