@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Tag component
 const Tag = ({ label, onClick }) => (
@@ -100,11 +101,10 @@ export default function Marketplace() {
     <div className="bg-base-200 min-h-screen">
       <div className="flex space-x-2 p-4 justify-center">
         <Tag label="All" onClick={() => setSelectedTags([])} />
-        <div className="tag-divider">|</div>
         {allTags.map((tag, index) => (
           <React.Fragment key={index}>
-            <Tag label={tag} onClick={() => handleTagClick(tag)} />
             <div className="tag-divider">|</div>
+            <Tag label={tag} onClick={() => handleTagClick(tag)} />
           </React.Fragment>
         ))}
       </div>

@@ -17,6 +17,7 @@ import Features from "./components/features.js";
 // import Paytm from "./components/paytm.js";
 
 import Marketplace from "./components/marketplace.js";
+import MarketplacePost from "./components/marketplace_post.js";
 export const serverurl = "http://localhost:8000";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -36,6 +37,7 @@ root.render(
       {/* <Route path="/paytm" element={<Paytm/>} /> */}
       <Route path="/room/:roomid" element={<Roompage />} />
       <Route path="/marketplace" element={<Marketplace />} />
+      <Route path="/marketplace/post" element={<MarketplacePost />} />
     </Routes>
   </Router>
   // <React.StrictMode>
