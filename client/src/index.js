@@ -21,6 +21,7 @@ import Temp from "./components/videoconf/temp.js";
 import Main from "./components/videoconf/main.js";
 import Live from "./components/videoconf/live.js";
 import MarketplacePost from "./components/marketplace_post.js";
+import Idea from "./components/idea.js";
 export const serverurl = "http://localhost:8000";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -43,6 +44,7 @@ root.render(
       <Route path="/live" element={<Live />} />
       <Route path="/marketplace" element={<Marketplace />} />
       <Route path="/marketplace/post" element={<MarketplacePost />} />
+      <Route path="/showcase" element={<Idea />} />
     </Routes>
   </Router>
   // <React.StrictMode>
