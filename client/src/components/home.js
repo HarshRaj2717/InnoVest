@@ -1,4 +1,10 @@
 import { Link } from "react-router-dom";
+import One from "./c1";
+import Two from "./c2";
+import Three from "./c3";
+import Four from "./c4";
+import Five from "./c5";
+import Six from "./c6";
 
 function Hero() {
   return (
@@ -29,46 +35,45 @@ function Dashboard() {
       <div className="flex w-full py-5">
         <Link
           to={"/marketplace"}
-          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+          className="flex-grow grid h-fit rounded-box place-items-center"
         >
-          Startup Marketplace
+          <One></One>
         </Link>
         <div className="divider divider-horizontal"></div>
         <Link
           to={"/sharktank"}
-          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+          className="flex-grow grid h-fit rounded-box place-items-center"
         >
-          Virtual SharkTank
-        </Link>
-      </div>
-      <div className="flex w-full py-5">
-        <Link
-          to={"/evaluate"}
-          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
-        >
-          Evaluate Idea
+          <Two></Two>
         </Link>
         <div className="divider divider-horizontal"></div>
         <Link
-          to={"/bizzgpt"}
-          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+          to={"/evaluate"}
+          className="flex-grow grid h-fit rounded-box place-items-center"
         >
-          BizzGPT
+          <Three></Three>
         </Link>
       </div>
       <div className="flex w-full py-5">
         <Link
-          to={"/showcase"}
-          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+          to={"/bizzgpt"}
+          className="flex-grow grid h-fit rounded-box place-items-center"
         >
-          Idea Showcase
+          <Four />
+        </Link>
+        <div className="divider divider-horizontal"></div>
+        <Link
+          to={"/showcase"}
+          className="flex-grow grid h-fit rounded-box place-items-center"
+        >
+          <Five />
         </Link>
         <div className="divider divider-horizontal"></div>
         <Link
           to={"/news"}
-          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+          className="flex-grow grid h-fit rounded-box place-items-center"
         >
-          News
+          <Six></Six>
         </Link>
       </div>
     </div>
