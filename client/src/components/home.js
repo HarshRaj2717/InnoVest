@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Hero() {
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -5,7 +7,7 @@ function Hero() {
         <div className="max-w-screen">
           <h1 className="text-9xl font-bold">InnoVest</h1>
           <p className="py-6 text-2xl">Innovate - Invest - Inspire</p>
-          <a className="btn btn-secondary rounded-full" href="#dashboard">
+          <a className="btn btn-outline btn-circle" href="#dashboard">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="16"
@@ -25,27 +27,49 @@ function Dashboard() {
   return (
     <div id="dashboard" className="p-10">
       <div className="flex w-full py-5">
-        <div className="btn btn-outline flex-grow grid h-20 card bg-base-300 rounded-box place-items-center">
+        <Link
+          to={"/marketplace"}
+          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+        >
           Startup Marketplace
-        </div>
+        </Link>
         <div className="divider divider-horizontal"></div>
-        <div className="btn btn-outline flex-grow grid h-20 card bg-base-300 rounded-box place-items-center">
+        <Link
+          to={"/sharktank"}
+          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+        >
           Virtual SharkTank
-        </div>
+        </Link>
       </div>
       <div className="flex w-full py-5">
-        <div className="btn btn-outline flex-grow grid h-20 card bg-base-300 rounded-box place-items-center">
+        <Link
+          to={"/evaluate"}
+          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+        >
           Evaluate Idea
-        </div>
+        </Link>
         <div className="divider divider-horizontal"></div>
-        <div className="btn btn-outline flex-grow grid h-20 card bg-base-300 rounded-box place-items-center">
+        <Link
+          to={"/bizzgpt"}
+          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+        >
           BizzGPT
-        </div>
+        </Link>
       </div>
       <div className="flex w-full py-5">
-        <div className="btn btn-outline flex-grow grid h-20 card bg-base-300 rounded-box place-items-center">
+        <Link
+          to={"/showcase"}
+          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+        >
           Idea Showcase
-        </div>
+        </Link>
+        <div className="divider divider-horizontal"></div>
+        <Link
+          to={"/news"}
+          className="btn btn-outline flex-grow grid h-20 card bg-base-200 rounded-box place-items-center"
+        >
+          News
+        </Link>
       </div>
     </div>
   );
