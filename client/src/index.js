@@ -17,6 +17,9 @@ import Features from "./components/features.js";
 // import Paytm from "./components/paytm.js";
 
 import Marketplace from "./components/marketplace.js";
+import Temp from "./components/videoconf/temp.js";
+import Main from "./components/videoconf/main.js";
+import Live from "./components/videoconf/live.js";
 export const serverurl = "http://localhost:8000";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -31,10 +34,12 @@ root.render(
       <Route path="/register" element={<Register />} />
       <Route path="/bizzgpt" element={<BizzGPT />} />
       <Route path="/evaluate" element={<Evaluate />} />
-      <Route path="/sharktank" element={<Sharktank />} />
+      <Route path="/sharktank" element={<Live />} />
       <Route path="/features" element={<Features   />} />
       {/* <Route path="/paytm" element={<Paytm/>} /> */}
       <Route path="/room/:roomid" element={<Roompage />} />
+      <Route path="/video" element={<Main />} />
+      <Route path="/live" element={<Live />} />
       <Route path="/marketplace" element={<Marketplace />} />
     </Routes>
   </Router>
