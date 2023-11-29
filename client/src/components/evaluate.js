@@ -35,11 +35,13 @@ export default function Evaluate() {
     if (inputMessage.trim() === "") {
       return;
     }
+    const tempInputMessage = inputMessage
     let temp_chats = allChats;
     temp_chats.push({ sender: "user", content: inputMessage });
     setAllChats(temp_chats);
     setInputMessage("");
     let answer = { sender: "bot", content: "" };
+    console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
     const api_res = await fetch(
       `https://evalgpt-production.up.railway.app/predict`,
       {
@@ -47,9 +49,10 @@ export default function Evaluate() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ idea: inputMessage }),
+        body: JSON.stringify({ idea: tempInputMessage }),
       }
     );
+    console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
     const api_data = await api_res.json();
     answer.content = api_data.content;
     temp_chats.push(answer);
