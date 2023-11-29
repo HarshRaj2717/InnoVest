@@ -35,13 +35,26 @@ export default function Evaluate() {
     if (inputMessage.trim() === "") {
       return;
     }
-    const tempInputMessage = inputMessage
-    let temp_chats = allChats;
-    temp_chats.push({ sender: "user", content: inputMessage });
-    setAllChats(temp_chats);
-    setInputMessage("");
+    if (inputMessage.length < 100) {
+      let temp_chats = allChats;
+      temp_chats.push({ sender: "user", content: inputMessage });
+      temp_chats.push({
+        sender: "bot",
+        content:
+          "The pitch lacks clarity in communicating the core concept of the startup. It's essential to clearly articulate what the business does and its value proposition in a concise manner.",
+      });
+      setInputMessage("");
+      setAllChats(temp_chats);
+      return;
+    }
+    document
+      .getElementById("diable-when-loading-1")
+      .classList.add("btn-disabled");
+    document
+      .getElementById("diable-when-loading-2")
+      .classList.add("btn-disabled");
+    const tempInputMessage = inputMessage;
     let answer = { sender: "bot", content: "" };
-    console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
     const api_res = await fetch(
       `https://evalgpt-production.up.railway.app/predict`,
       {
@@ -52,12 +65,20 @@ export default function Evaluate() {
         body: JSON.stringify({ idea: tempInputMessage }),
       }
     );
-    console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
     const api_data = await api_res.json();
     answer.content = api_data.content;
-    temp_chats.push(answer);
+    let temp_chats = allChats;
+    temp_chats.push({ sender: "user", content: inputMessage });
     setAllChats(temp_chats);
     setInputMessage("");
+    temp_chats.push(answer);
+    setAllChats(temp_chats);
+    document
+      .getElementById("diable-when-loading-1")
+      .classList.remove("btn-disabled");
+    document
+      .getElementById("diable-when-loading-2")
+      .classList.remove("btn-disabled");
   }
 
   return (
@@ -76,6 +97,7 @@ export default function Evaluate() {
       </div>
       <div className="form-control mt-10 flex flex-row">
         <textarea
+          id="diable-when-loading-1"
           className="textarea textarea-bordered bg-white text-black flex-grow mx-5"
           placeholder="Ask anything..."
           value={inputMessage}
@@ -83,7 +105,11 @@ export default function Evaluate() {
         ></textarea>
         <label className="label">
           <span className="label-text-alt"></span>
-          <button className="btn bg-sky-500 text-white" onClick={getAnswer}>
+          <button
+            id="diable-when-loading-2"
+            className="diable-when-loading btn bg-sky-500 text-white"
+            onClick={getAnswer}
+          >
             Send!
           </button>
         </label>

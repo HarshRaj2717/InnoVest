@@ -21,7 +21,7 @@ function UserMsg({ content }) {
   );
 }
 
-export default function BizzGPT() {
+export default function Evaluate() {
   const [allChats, setAllChats] = useState([
     {
       sender: "bot",
@@ -35,11 +35,13 @@ export default function BizzGPT() {
     if (inputMessage.trim() === "") {
       return;
     }
+    document
+      .getElementById("diable-when-loading-1")
+      .classList.add("btn-disabled");
+    document
+      .getElementById("diable-when-loading-2")
+      .classList.add("btn-disabled");
     const tempInputMessage = inputMessage;
-    let temp_chats = allChats;
-    temp_chats.push({ sender: "user", content: inputMessage });
-    setAllChats(temp_chats);
-    setInputMessage("");
     let answer = { sender: "bot", content: "" };
     const api_res = await fetch(
       `https://bizzgpt-production.up.railway.app/predict`,
@@ -53,16 +55,25 @@ export default function BizzGPT() {
     );
     const api_data = await api_res.json();
     answer.content = api_data.content;
-    temp_chats.push(answer);
+    let temp_chats = allChats;
+    temp_chats.push({ sender: "user", content: inputMessage });
     setAllChats(temp_chats);
     setInputMessage("");
+    temp_chats.push(answer);
+    setAllChats(temp_chats);
+    document
+      .getElementById("diable-when-loading-1")
+      .classList.remove("btn-disabled");
+    document
+      .getElementById("diable-when-loading-2")
+      .classList.remove("btn-disabled");
   }
 
   return (
     <div className="bg-base-300 h-screen p-20" style={{ height: "90vh" }}>
       <div
         className="p-5 rounded-md outline-dashed outline-4 bg-base-200 snap-y overflow-y-auto"
-        style={{ maxHeight: "calc(100% - 10rem)" }}
+        style={{ maxHeight: "calc(100% - 5rem)" }}
       >
         {allChats.map((chat, index) =>
           chat.sender === "user" ? (
@@ -74,6 +85,7 @@ export default function BizzGPT() {
       </div>
       <div className="form-control mt-10 flex flex-row">
         <textarea
+          id="diable-when-loading-1"
           className="textarea textarea-bordered bg-white text-black flex-grow mx-5"
           placeholder="Ask anything..."
           value={inputMessage}
@@ -81,7 +93,11 @@ export default function BizzGPT() {
         ></textarea>
         <label className="label">
           <span className="label-text-alt"></span>
-          <button className="btn bg-sky-500 text-white" onClick={getAnswer}>
+          <button
+            id="diable-when-loading-2"
+            className="diable-when-loading btn bg-sky-500 text-white"
+            onClick={getAnswer}
+          >
             Send!
           </button>
         </label>
