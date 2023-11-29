@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import StartupCard from "./startupCard";
 
 // Tag component
 const Tag = ({ label, onClick }) => (
@@ -8,34 +9,7 @@ const Tag = ({ label, onClick }) => (
   </button>
 );
 
-// StartupCard component
-function StartupCard({ name, tagline, tags }) {
-  return (
-    <div className="card w-96 m-5 bg-primary text-primary-content">
-      <div className="card-body">
-        <h2 className="card-title overflow-hidden whitespace-nowrap overflow-ellipsis">
-          {name}
-        </h2>
-        <p className="overflow-hidden whitespace-nowrap overflow-ellipsis">
-          {tagline}
-        </p>
-        <div className="text-xs italic">
-          {tags && tags.length > 0 && (
-            <div className="flex space-x-2 mt-2">
-              {tags.map((tag, index) => (
-                <Tag key={index} label={tag} />
-              ))}
-            </div>
-          )}
-        </div>
-        <div className="card-actions justify-end">
-          <button className="btn">Know More...</button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
+// Function to fetch startup data
 async function getStartups() {
   try {
     const response = await fetch("http://localhost:8000/marketplace");

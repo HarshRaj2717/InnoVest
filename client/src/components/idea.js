@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import IdeaCard from "./ideacard";
 
 // Tag component
 const Tag = ({ label, onClick }) => (
@@ -110,7 +111,7 @@ export default function Idea() {
       </div>
       <div className="flex justify-center flex-wrap">
         {filteredStartups.map((startup, index) => (
-          <StartupCard key={index} {...startup} />
+          <IdeaCard key={index} {...startup} />
         ))}
       </div>
     </div>
