@@ -5,10 +5,11 @@ import Three from "./c3";
 import Four from "./c4";
 import Five from "./c5";
 import Six from "./c6";
-
+import hh from "./pic.png"
 function Hero() {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-base-200 flex ">
+      <div className="kk"><img className="ii" src={hh}></img></div>
       <div className="hero-content text-center">
         <div className="max-w-screen">
           <h1 className="text-9xl font-bold">InnoVest</h1>
