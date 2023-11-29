@@ -16,7 +16,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(userrouter);
-app.use(marketplacerouter)
+app.use("/marketplace", marketplacerouter)
 
 app.listen(8000, () => {
     console.log("Server started on port 8000");
