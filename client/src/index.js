@@ -16,7 +16,7 @@ import Roompage from "./components/videoconf/Roompage.js";
 import Features from "./components/features.js";
 // import Paytm from "./components/paytm.js";
 
-import Marketplace from "./components/marketplace.js"; 
+import Marketplace from "./components/marketplace.js";
 export const serverurl = "http://localhost:8000";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -35,7 +35,6 @@ root.render(
       <Route path="/features" element={<Features   />} />
       {/* <Route path="/paytm" element={<Paytm/>} /> */}
       <Route path="/room/:roomid" element={<Roompage />} />
-
       <Route path="/marketplace" element={<Marketplace />} />
     </Routes>
   </Router>
