@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Features = () => {
     return (
 
-        <section > 
+        <section className='feature-container' > 
             <div class="container-fluid">
                 <div class="container">
                     <div class="row hello">
