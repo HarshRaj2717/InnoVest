@@ -2,6 +2,7 @@ import express from "express";
 import cors from 'cors';
 import connectDB from "./connection.js";
 import userrouter from "./router/userrouter.js";
+import marketplacerouter from "./router/marketplacerouter.js";
 
 const app = express();
 connectDB();
@@ -15,6 +16,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(userrouter);
+app.use(marketplacerouter)
 
 app.listen(8000, () => {
     console.log("Server started on port 8000");
