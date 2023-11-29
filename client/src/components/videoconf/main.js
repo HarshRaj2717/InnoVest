@@ -9,7 +9,7 @@ const Main = () => {
         navigate(`/room/${code}`) //navigating to the room page
     }
   return (
-    <div>
+    <div >
       <form onSubmit={submithandler}>
         <div className='flex codediv'> 
         <label >ENTER ROOM CODE FOR THE MEETING</label>

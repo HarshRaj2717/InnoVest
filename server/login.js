@@ -22,14 +22,16 @@ export const login=async(req,res)=>{
             })
         }
         else{
-            res.status(404).send({
-                message:"Incorrect password"
+            res.send({
+                message:"Incorrect password",
+                success:false
             })
         }
     }
     else{
-        res.status(404).send({
-            message:"User not found"
+        res.send({
+            message:"User not found",
+            success:false
         })
     }
 }

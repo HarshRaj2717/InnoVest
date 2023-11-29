@@ -11,7 +11,7 @@ export const register = async (req, res) => {
     const { name, email, password } = req.body;
     const aa = await user.findOne({ email });
     if (aa) {
-        res.status(404).send({
+        res.send({
             message: "User already exists"
         })
     }
@@ -20,10 +20,8 @@ export const register = async (req, res) => {
         const a = await user.create({
             name, email, password: hashedpass
         })
-        res.status(200).send({
-            message: "User registered"
-        })
-        const codedid = jwt.sign({ _id: a._id }, process.env.secretkey);
+        // 
+        const codedid = jwt.sign({ _id: a._id }, "fghj");
         res.cookie("token", codedid, {
             httpOnly: true,
             expires: new Date(Date.now() + 20 * 1000 * 60),

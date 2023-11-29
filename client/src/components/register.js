@@ -15,8 +15,11 @@ const Register = () => {
             //   console.log(loading)
             e.preventDefault();
             try {
+                console.log(name)
+                console.log(email)
+                console.log(password)
                 const data = await axios.post(`${serverurl}/register`, {
-                    email, password,
+                    name,email, password
                 }, {
                     headers: {
                         "Content-Type": "application/json",
@@ -24,7 +27,7 @@ const Register = () => {
                     withCredentials: true,
                 })
                 // console.log(data.data.name)
-                toast.success(`Welcome back , ${data.data.name}`);
+                toast.success(`Welcome back`);
                 setisauth(true)
                 // setloading(false); 
             }
@@ -36,7 +39,7 @@ const Register = () => {
             }
         }
         if (isauth) {
-            return <Navigate to="/home" />
+            return <Navigate to="/features" />
         }
     return (
         <div className="login md:flex">
@@ -53,7 +56,7 @@ const Register = () => {
                 <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
             </div>
             <div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
-                <form class="bg-white">
+                <form class="bg-white" onSubmit={submithandler}>
                     <h1 class="text-gray-800 font-bold text-2xl mb-1">Hello Again!</h1>
                     <p class="text-sm font-normal text-gray-600 mb-7">Welcome Back</p>
                     <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -81,7 +84,7 @@ const Register = () => {
                         </svg>
                         <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }}/>
                     </div>
-                    <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2" onClick={submithandler}>Login</button>
+                    <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2" >SIGNUP</button>
                     <span class="text-sm ml-2 hover:text-blue-500 cursor-pointer">        <div > Already a user? <Link to="/login" className='font-bold'>LOGIN</Link></div>
 </span>
                 </form>

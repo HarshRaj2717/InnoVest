@@ -10,46 +10,32 @@ const Loginpage = () => {
         const [isauth,setisauth]=useState(false);
         // const { isauthenticated, setisauthenticated,setloading,loading } = useContext(Context);
         const submithandler = async (e) => {
-            //   setloading(true);
-            //   console.log(loading)
             e.preventDefault();
             try {
                 console.log(email)
-                // const dd = await axios.post(`${serverurl}/login`, {
-                //     email, password
-                // }, {
-                //     headers: {
-                //         "Content-Type": "application/json",
-                //     },
-                //     withCredentials: true,
-                // })
-                const dd = await fetch(
-                    `${serverurl}/login`,
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({ email: email, password: password }),
-                    }
-                )
-                // console.log(data.data.name)
+                console.log(password)
+                const dd = await axios.post(`${serverurl}/login`, {
+                    email, password
+                }, {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    withCredentials: true,
+                })
                 toast.success(`Welcome back , ${dd.data.name}`);
                 setisauth(true)
                 console.log(dd)
                 // console.log("hello bhai")
-                // setloading(false); 
             }
             catch (error) {
                 console.log(error);
-                // toast.error(error.response.data.message)
+                toast.error(error.response.data.message)
                 setisauth(false)
-                // setloading(false);
             }
         }
-
+        console.log(isauth)
         if (isauth) {
-            return <Navigate to={"/home"} />
+            return <Navigate to={"/features"} />
         }
         return (
             <div className="login md:flex">
@@ -66,7 +52,7 @@ const Loginpage = () => {
                     <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
                 </div>
                 <div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
-                    <form class="bg-white" >
+                    <form class="bg-white" onSubmit={submithandler}>
                         <h1 class="text-gray-800 font-bold text-2xl mb-1">Hello Again!</h1>
                         <p class="text-sm font-normal text-gray-600 mb-7">Welcome Back</p>
                         
@@ -87,7 +73,7 @@ const Loginpage = () => {
                             </svg>
                             <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }}/>
                         </div>
-                        <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2" onClick={submithandler}>Login</button>
+                        <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2" >Login</button>
                         <span class="text-sm ml-2 hover:text-blue-500 cursor-pointer">        <div > New user? <Link to="/register" className='font-bold'>SIGNUP</Link></div>
                         </span>
                     </form>

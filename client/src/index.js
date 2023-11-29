@@ -8,7 +8,7 @@ import Navbar from "./components/navbar";
 import Home from "./components/home";
 // import Login from './components/login';
 import Register from "./components/register.js";
-import Loginpage from "./components/nn.js";
+import Loginpage from "./components/Loginpage.js";
 import BizzGPT from "./components/bizzgpt.js";
 import Evaluate from "./components/evaluate.js";
 import Sharktank from "./components/videoconf/Sharktank.js";

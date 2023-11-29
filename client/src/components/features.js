@@ -25,7 +25,7 @@ const Features = () => {
                                         <li> <i class="fa fa-times" aria-hidden="true"></i> ACCESS TO NEWS HEADLINE  </li>
                                     </ul>
                                 </div>
-                                <Link to="/paytm">Order Now </Link>
+                                <Link to="/home">Order Now </Link>
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@ const Features = () => {
                                         
                                     </ul>
                                 </div>
-                                <Link to="/paytm">Order Now </Link>
+                                <Link to="/home">Order Now </Link>
 
                             </div>
                         </div>
@@ -70,7 +70,7 @@ const Features = () => {
                                         <li> <i class="fa fa-check" aria-hidden="true"></i> DASHBOARD ACESS</li>
                                     </ul>
                                 </div>
-                                <Link to="/paytm">Order Now </Link>
+                                <Link to="/home">Order Now </Link>
                             </div>
                         </div>
                     </div>
