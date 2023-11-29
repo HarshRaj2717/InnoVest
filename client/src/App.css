@@ -46,3 +46,17 @@
   height: 40rem;
   width: 40rem;
 }
+
+/* video */
+.codediv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border: .1rem solid black;
+  box-shadow: 3px 3px 2px 2px grey;
+  height: 10rem;
+  width: 25rem;
+  margin: 10rem auto;
+}

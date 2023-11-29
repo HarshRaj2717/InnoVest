@@ -11,6 +11,8 @@ import Register from "./components/register.js";
 import Loginpage from "./components/nn.js";
 import BizzGPT from "./components/bizzgpt.js";
 import Evaluate from "./components/evaluate.js";
+import Sharktank from "./components/videoconf/Sharktank.js";
+import Roompage from "./components/videoconf/Roompage.js";
 export const serverurl = "http://localhost:8000";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -24,6 +26,8 @@ root.render(
       <Route path="/register" element={<Register />} />
       <Route path="/bizzgpt" element={<BizzGPT />} />
       <Route path="/evaluate" element={<Evaluate />} />
+      <Route path="/sharktank" element={<Sharktank />} />
+      <Route path="/room/:roomid" element={<Roompage />} />
     </Routes>
   </Router>
   // <React.StrictMode>
