@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Tag component
-const Tag = ({ label, selected, onClick }) => (
-  <button className="" onClick={onClick}>
+const Tag = ({ label, onClick }) => (
+  <button className="tag" onClick={onClick}>
     {label}
   </button>
 );
@@ -12,7 +12,9 @@ function StartupCard({ name, tagline, tags }) {
   return (
     <div className="card w-96 m-5 bg-primary text-primary-content">
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
+        <h2 className="card-title overflow-hidden whitespace-nowrap overflow-ellipsis">
+          {name}
+        </h2>
         <p className="overflow-hidden whitespace-nowrap overflow-ellipsis">
           {tagline}
         </p>
@@ -33,32 +35,25 @@ function StartupCard({ name, tagline, tags }) {
   );
 }
 
-function getStartups() {
-  let startUps = [];
+async function getStartups() {
+  try {
+    const response = await fetch("http://localhost:8000/marketplace");
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
-  Array.from({ length: 5 }, (_, i) =>
-    startUps.push({
-      name: "Work-AI",
-      tagline:
-        "Transforming Virtual Workplaces with AI-Powered Innovation and Dynamic Collaboration.",
-      tags: ["AI"],
-    })
-  );
-  Array.from({ length: 5 }, (_, i) =>
-    startUps.push({
-      name: "BLock",
-      tagline:
-        "Transforming Virtual Workplaces with AI-Powered Innovation and Dynamic Collaboration.",
-      tags: ["Blockchain"],
-    })
-  );
-
-  return startUps;
+    const data = await response.json();
+    return data.startups;
+  } catch (error) {
+    console.error("Error fetching startup data:", error.message);
+    return [];
+  }
 }
 
 // Marketplace component
 export default function Marketplace() {
   const [selectedTags, setSelectedTags] = useState([]);
+  const [startups, setStartups] = useState([]);
   const allTags = [
     "Tech",
     "Fashion",
@@ -73,7 +68,19 @@ export default function Marketplace() {
     "Security",
   ];
 
-  const startups = getStartups();
+  // Use useEffect to fetch data when the component mounts
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const startupsData = await getStartups();
+        setStartups(startupsData);
+      } catch (error) {
+        console.error("Error fetching startup data:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures this effect runs only once on mount
 
   const filteredStartups = selectedTags.length
     ? startups.filter((startup) =>
