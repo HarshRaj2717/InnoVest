@@ -1,6 +1,6 @@
 import React from 'react'
 import "./card.css"
-import cam from "./images/cam.jpg"
+import cam from "./images/idea.jpg"
 const Five = () => {
   return (
     <div>

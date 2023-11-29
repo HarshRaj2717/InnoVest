@@ -35,6 +35,7 @@ export default function BizzGPT() {
     if (inputMessage.trim() === "") {
       return;
     }
+    const tempInputMessage = inputMessage;
     let temp_chats = allChats;
     temp_chats.push({ sender: "user", content: inputMessage });
     setAllChats(temp_chats);
@@ -47,7 +48,7 @@ export default function BizzGPT() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ question: inputMessage }),
+        body: JSON.stringify({ question: tempInputMessage }),
       }
     );
     const api_data = await api_res.json();
