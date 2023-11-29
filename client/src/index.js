@@ -23,7 +23,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
     <Navbar />
-    <div className="mb-14"></div>
+    <div className="mb-16 bg-base-200"></div>
     <Routes>
       <Route path="/" element={<Loginpage />} />
       <Route path="/login" element={<Loginpage />} />
