@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const Live = () => {
     return (
         <div className='hehe'>
+            <div className='flex justify-center text-2xl m-4 underline'>Live Events</div>
             <ol>
                 <Link to="/video">
                     <li >
