@@ -7,10 +7,10 @@ const Five = () => {
       <div class="skill-card">
                     <header class="skill-card__header"><img class="skill-card__icon" src={cam} alt="HTML5 Logo" /></header>
                     <section class="skill-card__body">
-                        <h2 class="skill-card__title">Idea Showcase</h2><span class="skill-card__duration">letsgo boyy</span>
+                        <h2 class="skill-card__title">Idea Showcase</h2>
                         <ul class="skill-card__knowledge">
-                            <li>hello startup bhai</li>
-                            <li>kaise ho bhai</li>
+                            <li>list the hackathon ideas</li>
+                            <li>implement them with proper guidance</li>
                         </ul>
                     </section>
                 </div>

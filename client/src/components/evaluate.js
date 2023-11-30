@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-
+import hh from "./cb1.jpg"
 function BotMsg({ content }) {
   return (
-    <div className="chat chat-start ">
-      <div className="chat-bubble chat-bubble-primary">
+    <div className="chat chat-start photodali">
+      <div className="chat-image avatar">
+        <div className="w-10 rounded-full ">
+          <img className="kilo" alt="Tailwind CSS chat bubble component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        </div>
+      </div>
+      <div className="chat-bubble chat-bubble-accent">
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
     </div>
@@ -14,7 +19,7 @@ function BotMsg({ content }) {
 function UserMsg({ content }) {
   return (
     <div className="chat chat-end">
-      <div className="chat-bubble chat-bubble-accent">
+      <div className="chat-bubble chat-bubble-success">
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
     </div>
@@ -84,7 +89,7 @@ export default function Evaluate() {
   return (
     <div className="bg-base-300 h-screen p-20" style={{ height: "90vh" }}>
       <div
-        className="p-5 rounded-md outline-dashed outline-4 bg-base-200 snap-y overflow-y-auto"
+        className="p-5 rounded-md outline outline-4 bg-base-200 snap-y overflow-y-auto"
         style={{ maxHeight: "calc(100% - 5rem)" }}
       >
         {allChats.map((chat, index) =>

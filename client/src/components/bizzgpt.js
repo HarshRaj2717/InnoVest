@@ -3,7 +3,12 @@ import ReactMarkdown from "react-markdown";
 
 function BotMsg({ content }) {
   return (
-    <div className="chat chat-start ">
+    <div className="chat chat-start photodali ">
+      <div className="chat-image avatar">
+        <div className="w-10 rounded-full ">
+          <img className="kilo" alt="Tailwind CSS chat bubble component" src="https://static.turbosquid.com/Preview/2014/05/19__14_45_28/002.jpg8ba93d52-a16d-48f3-a190-db45acc87faeOriginal.jpg" />
+        </div>
+      </div>
       <div className="chat-bubble chat-bubble-primary">
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
@@ -14,10 +19,11 @@ function BotMsg({ content }) {
 function UserMsg({ content }) {
   return (
     <div className="chat chat-end">
+      
       <div className="chat-bubble chat-bubble-accent">
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
-    </div>
+    </div> 
   );
 }
 
@@ -72,7 +78,7 @@ export default function Evaluate() {
   return (
     <div className="bg-base-300 h-screen p-20" style={{ height: "90vh" }}>
       <div
-        className="p-5 rounded-md outline-dashed outline-4 bg-base-200 snap-y overflow-y-auto"
+        className="p-5 rounded-md  outline-4 bg-base-200 snap-y overflow-y-auto"
         style={{ maxHeight: "calc(100% - 5rem)" }}
       >
         {allChats.map((chat, index) =>
@@ -83,6 +89,17 @@ export default function Evaluate() {
           )
         )}
       </div>
+
+
+
+
+
+
+
+
+
+
+
       <div className="form-control mt-10 flex flex-row">
         <textarea
           id="diable-when-loading-1"

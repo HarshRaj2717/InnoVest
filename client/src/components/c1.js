@@ -1,6 +1,6 @@
 import React from "react";
 import "./card.css";
-import cam from "./images/cam.jpg";
+import cam from "./images/market.jpg"
 const One = () => {
   return (
     <div>
@@ -10,10 +10,10 @@ const One = () => {
         </header>
         <section class="skill-card__body">
           <h2 class="skill-card__title">Marketplace</h2>
-          <span class="skill-card__duration">letsgo boyy</span>
+          <span class="skill-card__duration">One stop solution</span>
           <ul class="skill-card__knowledge">
-            <li>hello startup bhai</li>
-            <li>kaise ho bhai</li>
+            <li>list your ideas</li>
+            <li>get fundings</li>
           </ul>
         </section>
       </div>

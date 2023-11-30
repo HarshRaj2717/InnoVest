@@ -1,5 +1,5 @@
 import React from 'react'
-import thumb from "./images/thumb.jpg"
+import thumb from "./images/cam.jpg";
 import "./card.css"
 
 const Six = () => {
@@ -8,10 +8,10 @@ const Six = () => {
       <div class="skill-card">
                     <header class="skill-card__header"><img class="skill-card__icon" src={thumb} alt="HTML5 Logo" /></header>
                     <section class="skill-card__body">
-                        <h2 class="skill-card__title">News</h2><span class="skill-card__duration">letsgo boyy</span>
+                        <h2 class="skill-card__title">News</h2>
                         <ul class="skill-card__knowledge">
-                            <li>hello startup bhai</li>
-                            <li>kaise ho bhai</li>
+                            <li>get latest news</li>
+                            <li>BOOM VS CONFLICTING NEWS</li>
                         </ul>
                     </section>
                 </div>
