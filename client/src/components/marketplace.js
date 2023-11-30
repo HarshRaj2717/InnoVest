@@ -82,6 +82,9 @@ export default function Marketplace() {
           </React.Fragment>
         ))}
       </div>
+      <div className="flex justify-centre mm">
+      <Link to="/marketplace/post" className="btn btn-success">ADD POST</Link>
+      </div>
       <div className="flex justify-center flex-wrap">
         {filteredStartups.map((startup, index) => (
           <StartupCard key={index} {...startup} />

@@ -93,3 +93,10 @@
   width:3rem;
   border-radius: 50%;
 }
+
+.mm{
+  display: flex;
+  justify-content: center;
+  width: 3rem;
+  margin: 1rem auto;
+}

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function MarketplacePost() {
   const allTags = [
     "Tech",
@@ -12,11 +14,22 @@ export default function MarketplacePost() {
     "AI",
     "Security",
   ];
+  const [name,setName]=useState("")
+  const [email,setEmail]=useState("")
+  const [tag,setTag]=useState("")
+  const [desc,setdesc]=useState("")
+  const [equity,setequity]=useState("")
+  const [price,setprice]=useState("")
+  const [owner,setowner]=useState("")
+  const[Tagline,setTagline]=useState("")
+  // const submithandler=(e)=>{
+
+  // }
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card shrink-0 w-full shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form className="card-body" >
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -26,6 +39,9 @@ export default function MarketplacePost() {
                 placeholder="Name"
                 className="input input-bordered"
                 required
+                value={name} onChange={(e)=>{
+                  setName(e.target.value)
+                }}
               />
             </div>
             <div className="form-control">
@@ -37,6 +53,8 @@ export default function MarketplacePost() {
                 placeholder="Tagline"
                 className="input input-bordered"
                 required
+                value={Tagline} onChange={(e)=>{
+                  setTagline(e.target.value)}}
               />
             </div>
             <div className="border-2 p-2">
@@ -49,6 +67,8 @@ export default function MarketplacePost() {
                       type="radio"
                       name={tag}
                       className="radio checked:bg-blue-500"
+                      value={tag} onChange={(e)=>{
+                        setTag(e.target.value)}}
                     />
                   </label>
                 </div>
@@ -63,6 +83,8 @@ export default function MarketplacePost() {
                 placeholder="Description"
                 className="textarea textarea-bordered"
                 required
+                value={desc} onChange={(e)=>{
+                  setdesc(e.target.value)}}
               ></textarea>
             </div>
             <div className="form-control">
@@ -74,6 +96,8 @@ export default function MarketplacePost() {
                 placeholder="Equity"
                 className="input input-bordered"
                 required
+                value={equity} onChange={(e)=>{
+                  setequity(e.target.value)}}
               />
             </div>
             <div className="form-control">
@@ -85,6 +109,8 @@ export default function MarketplacePost() {
                 placeholder="Price"
                 className="input input-bordered"
                 required
+                value={price} onChange={(e)=>{
+                  setprice(e.target.value)}}
               />
             </div>
             <div className="form-control">
@@ -96,6 +122,8 @@ export default function MarketplacePost() {
                 placeholder="Owner"
                 className="input input-bordered"
                 required
+                value={owner} onChange={(e)=>{
+                  setowner(e.target.value)}}
               />
             </div>
             <div className="form-control">
@@ -107,6 +135,8 @@ export default function MarketplacePost() {
                 placeholder="Mail"
                 className="input input-bordered"
                 required
+                value={email} onChange={(e)=>{
+                  setEmail(e.target.value)}}
               />
             </div>
             <div className="form-control mt-6">
