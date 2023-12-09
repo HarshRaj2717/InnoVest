@@ -6,6 +6,7 @@ import Four from "./c4";
 import Five from "./c5";
 import Six from "./c6";
 import hh from "./pic.png"
+import Carousel from "./carousel/Carousel";
 function Hero() {
   return (
     <div className="hero min-h-screen bg-base-200 flex ">
@@ -85,7 +86,7 @@ export default function Home() {
   return (
     <div>
       <Hero></Hero>
-      <Dashboard></Dashboard>
+      <Carousel/>
     </div>
   );
 }

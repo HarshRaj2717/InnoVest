@@ -1,7 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {gsap} from "gsap"
+import { useGSAP } from '@gsap/react';
 
 const Navbar = () => {
+  
+  useGSAP(()=>{
+    gsap.from(".navbar",{
+      y:-100,
+      opacity:0,
+      stagger:3,
+      duration: 1,
+      delay:1
+  })
+})
   return (
     <div className="navbar bg-base-100 fixed top-0 w-full z-50 mb-4">
       <div className="navbar-start">

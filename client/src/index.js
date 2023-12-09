@@ -23,6 +23,7 @@ import Main from "./components/videoconf/main.js";
 import MarketplacePost from "./components/marketplace_post.js";
 import Idea from "./components/idea.js";
 import News from "./components/news.js";
+import Carousel from "./components/carousel/Carousel.js";
 export const serverurl = "http://localhost:8000";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -47,6 +48,7 @@ root.render(
       <Route path="/marketplace/post" element={<MarketplacePost />} />
       <Route path="/showcase" element={<Idea />} />
       <Route path="/news" element={<News />} />
+      <Route path="/hello" element={<Carousel />} />
     </Routes>
   </Router>
   // <React.StrictMode>
