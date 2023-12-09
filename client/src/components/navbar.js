@@ -6,10 +6,10 @@ import { useGSAP } from '@gsap/react';
 const Navbar = () => {
   
   useGSAP(()=>{
-    gsap.from(".navbar",{
+    gsap.from(".navbar , .iskeandar li , .loginkaro",{
       y:-100,
       opacity:0,
-      stagger:3,
+      stagger:0.2,
       duration: 1,
       delay:1
   })
@@ -60,7 +60,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 iskeandar">
           <li>
             <Link to={"/marketplace"}>MarketPlace</Link>
           </li>
@@ -81,7 +81,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end loginkro">
         <Link className="btn" to="/login">
           LOGIN/SIGNUP
         </Link>
