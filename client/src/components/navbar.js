@@ -13,6 +13,8 @@ const Navbar = () => {
       duration: 1,
       delay:1
   })
+
+    
 })
   return (
     <div className="navbar bg-base-100 fixed top-0 w-full z-50 mb-4">

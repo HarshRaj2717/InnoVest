@@ -1,30 +1,42 @@
 import React from 'react'
 import "./carousel.css"
+import cam from "../images/market.jpg"
+import judge from "../images/much.jpg"
+import much from "../images/judge.jpg"
+import market from "../images/thumb.jpg"
+import camw from "../images/idea.jpg"
+import thumb from "../images/cam.jpg";
+import { Link } from 'react-router-dom'
+
 const Carousel = () => {
     return (
-        <div className='upparwala '>
-            <div className="carousel  carousel-center max-w-max mb-40 mx-6 p-4 space-x-4 bg-neutral rounded-box">
-                <div className="carousel-item">
-                    <img src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" className="rounded-box" />
-                </div>
-                <div className="carousel-item">
-                    <img src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg" className="rounded-box" />
-                </div>
-                <div className="carousel-item">
-                    <img src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg" className="rounded-box" />
-                </div>
-                <div className="carousel-item">
-                    <img src="https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg" className="rounded-box" />
-                </div>
-                <div className="carousel-item">
-                    <img src="https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg" className="rounded-box" />
-                </div>
-                <div className="carousel-item">
-                    <img src="https://daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg" className="rounded-box" />
-                </div>
-                <div className="carousel-item">
-                    <img src="https://daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg" className="rounded-box" />
-                </div>
+        <div className='upparwala ' id="dashboard">
+            <div className="carousel  carousel-center max-w-max mb-20 mx-6 p-4 space-x-4 bg-neutral rounded-box">
+                <Link to="/marketplace" className="carousel-item">
+                    <div className="hg">MARKETPLACE</div>
+                    <img src={cam} className="rounded-box gg" />
+                </Link>
+                <Link to="/sharktank" className="carousel-item">
+                    <div className="hg">SHARKTANK</div>
+                    <img src={judge} className="rounded-box gg" />
+                </Link>
+                <Link to="/evaluate" className="carousel-item">
+                    <div className="hg">EVALUATE IDEA</div>
+                    <img src={much} className="rounded-box gg" />
+                </Link>
+                <Link to="/bizzgpt" className="carousel-item">
+                    <div className="hg">BIZZGPT</div>
+                    <img src={market} className="rounded-box gg" />
+                </Link>
+                <Link to="/showcase" className="carousel-item">
+                    <div className="hg">IDEA SHOWCASE</div>
+                    <img src={camw} className="rounded-box gg" />
+                </Link>
+                <Link to="/news" className="carousel-item">
+                    <div className="hg">NEWS</div>
+                    <img src={thumb} className="rounded-box gg" />
+                </Link>
+                
             </div>
         </div>
     )
