@@ -5,8 +5,6 @@ const IdeaCard = ({
   tagline,
   tags,
   description,
-  equity,
-  price,
   owner,
   mail,
 }) => {

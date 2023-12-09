@@ -9,35 +9,8 @@ const Tag = ({ label, onClick }) => (
   </button>
 );
 
-// StartupCard component
-function StartupCard({ name, tagline, tags }) {
-  return (
-    <div className="card w-96 m-5 bg-base-100 shadow-xl">
-      <div className="card-body">
-        <h2 className="card-title overflow-hidden whitespace-nowrap overflow-ellipsis">
-          {name}
-        </h2>
-        <p className="overflow-hidden whitespace-nowrap overflow-ellipsis">
-          {tagline}
-        </p>
-        <div className="text-xs italic">
-          {tags && tags.length > 0 && (
-            <div className="flex space-x-2 mt-2">
-              {tags.map((tag, index) => (
-                <Tag key={index} label={tag} />
-              ))}
-            </div>
-          )}
-        </div>
-        <div className="card-actions justify-end">
-          <Link to="" className="btn btn-primary">Know More...</Link>
-        </div>
-      </div>
-    </div>
-  );
-}
 
-async function getStartups() {
+async function getIdeas() {
   try {
     const response = await fetch("http://localhost:8000/marketplace");
     if (!response.ok) {
@@ -74,7 +47,7 @@ export default function Idea() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const startupsData = await getStartups();
+        const startupsData = await getIdeas();
         setStartups(startupsData);
       } catch (error) {
         console.error("Error fetching startup data:", error.message);
