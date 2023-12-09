@@ -50,7 +50,7 @@ export default function Evaluate() {
     const tempInputMessage = inputMessage;
     let answer = { sender: "bot", content: "" };
     const api_res = await fetch(
-      `https://bizzgpt-production.up.railway.app/predict`,
+      `https://bizzgpt-production-7340.up.railway.app/predict`,
       {
         method: "POST",
         headers: {

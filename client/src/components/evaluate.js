@@ -61,7 +61,7 @@ export default function Evaluate() {
     const tempInputMessage = inputMessage;
     let answer = { sender: "bot", content: "" };
     const api_res = await fetch(
-      `https://evalgpt-production.up.railway.app/predict`,
+      `https://evalgpt-production-3596.up.railway.app/predict`,
       {
         method: "POST",
         headers: {
