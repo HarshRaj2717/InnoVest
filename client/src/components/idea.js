@@ -83,7 +83,7 @@ export default function Idea() {
         ))}
       </div>
       <div className="flex justify-centre mm">
-      <Link to="/showcase/post" className="btn btn-success">ADD Idea</Link>
+      <Link to="/showcase/post" className="btn btn-success">ADD IDEA</Link>
       </div>
       <div className="flex justify-center flex-wrap">
         {filteredStartups.map((startup, index) => (

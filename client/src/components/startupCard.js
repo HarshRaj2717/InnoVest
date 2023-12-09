@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 
 const StartupCard = ({
   name,
@@ -12,6 +11,54 @@ const StartupCard = ({
   mail,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDescOpen, setIsDescOpen] = useState(false);
+  const [aiDescription, setAiDescription] = useState("");
+
+  async function aiDescRes() {
+    try {
+      const api_res = await fetch(
+        `https://advisorgpt-production.up.railway.app/predict`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ idea: description }),
+        }
+      );
+
+      if (!api_res.ok) {
+        throw new Error(`HTTP error! Status: ${api_res.status}`);
+      }
+
+      const api_data = await api_res.json();
+      setAiDescription(api_data.content);
+    } catch (error) {
+      console.error("Error fetching AI description:", error);
+    }
+  }
+
+  function AiDescCard() {
+    useEffect(() => {
+      aiDescRes();
+    }, []);
+    return (
+      <div className="fixed inset-0 flex items-center justify-center z-50 overflow-auto bg-black bg-opacity-50">
+        <div className="bg-white p-4 rounded shadow-md max-w-fit">
+          <h2 className="text-primary text-3xl font-bold mb-4">AI Expert</h2>
+          <p className="text-gray-700 my-4">{aiDescription}</p>
+          <button
+            className="block btn btn-secondary"
+            onClick={() => {
+              setIsDescOpen(false);
+            }}
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="card w-96 m-5 bg-primary text-primary-content">
@@ -89,6 +136,15 @@ const StartupCard = ({
                 >
                   Contact {owner}
                 </a>
+                <button
+                  className="block btn btn-secondary"
+                  onClick={() => {
+                    setIsDescOpen(true);
+                  }}
+                >
+                  Ask our AI expert
+                </button>
+                {isDescOpen && <AiDescCard />}
               </div>
             </div>
           </div>
