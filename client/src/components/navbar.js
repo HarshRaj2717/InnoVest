@@ -64,22 +64,22 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 iskeandar">
           <li>
-            <Link to={"/marketplace"}>MarketPlace</Link>
+            <Link to={"/marketplace"} className="m-1">MarketPlace</Link>
           </li>
           <li>
-            <Link to={"/sharktank"}>SharkTank</Link>
+            <Link to={"/sharktank"} className="m-1">SharkTank</Link>
           </li>
           <li>
-            <Link to={"/evaluate"}>Evaluate Idea</Link>
+            <Link to={"/evaluate"} className="m-1">Evaluate Idea</Link>
           </li>
           <li>
-            <Link to={"/bizzgpt"}>BizzGPT</Link>
+            <Link to={"/bizzgpt"} className="m-1">BizzGPT</Link>
           </li>
           <li>
-            <Link to={"/showcase"}>Idea Showcase</Link>
+            <Link to={"/showcase"} className="m-1">Idea Showcase</Link>
           </li>
           <li>
-            <Link to={"/news"}>News</Link>
+            <Link to={"/news"} className="m-1">News</Link>
           </li>
         </ul>
       </div>

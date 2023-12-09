@@ -19,7 +19,7 @@ import Features from "./components/features.js";
 import Marketplace from "./components/marketplace.js";
 import Temp from "./components/videoconf/temp.js";
 import Main from "./components/videoconf/main.js";
-// import Live from "./components/videoconf/live.js";
+import Live from "./components/videoconf/live.js";
 import MarketplacePost from "./components/marketplace_post.js";
 import Idea from "./components/idea.js";
 import News from "./components/news.js";
@@ -39,11 +39,11 @@ root.render(
       <Route path="/register" element={<Register />} />
       <Route path="/bizzgpt" element={<BizzGPT />} />
       <Route path="/evaluate" element={<Evaluate />} />
-      <Route path="/sharktank" element={<Main />} />
+      <Route path="/sharktank" element={<Live />} />
       <Route path="/features" element={<Features />} />
       {/* <Route path="/paytm" element={<Paytm/>} /> */}
       <Route path="/room/:roomid" element={<Roompage />} />
-      {/* <Route path="/video" element={<Main />} /> */}
+      <Route path="/video" element={<Main />} />
       {/* <Route path="/live" element={<Live />} /> */}
       <Route path="/marketplace" element={<Marketplace />} />
       <Route path="/marketplace/post" element={<MarketplacePost />} />
