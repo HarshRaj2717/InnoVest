@@ -12,7 +12,7 @@ const Tag = ({ label, onClick }) => (
 
 async function getIdeas() {
   try {
-    const response = await fetch("http://localhost:8000/marketplace");
+    const response = await fetch("http://localhost:8000/showcase");
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -81,6 +81,9 @@ export default function Idea() {
             <Tag label={tag} onClick={() => handleTagClick(tag)} />
           </React.Fragment>
         ))}
+      </div>
+      <div className="flex justify-centre mm">
+      <Link to="/showcase/post" className="btn btn-success">ADD Idea</Link>
       </div>
       <div className="flex justify-center flex-wrap">
         {filteredStartups.map((startup, index) => (

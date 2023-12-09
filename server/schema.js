@@ -69,3 +69,32 @@ const marketplaceSchema = new mongoose.Schema({
 });
 
 export const marketplace = new mongoose.model("marketplace", marketplaceSchema);
+
+const showcaseSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  tagline: {
+    type: String,
+    required: true,
+  },
+  tags: {
+    type: [String],
+    default: [],
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  owner: {
+    type: String,
+    required: true,
+  },
+  mail: {
+    type: String,
+    required: true,
+  },
+});
+
+export const showcase = new mongoose.model("showcase", showcaseSchema);

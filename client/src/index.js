@@ -24,6 +24,7 @@ import MarketplacePost from "./components/marketplace_post.js";
 import Idea from "./components/idea.js";
 import News from "./components/news.js";
 import Carousel from "./components/carousel/Carousel.js";
+import ShowcasePost from "./components/showcase_post.js";
 export const serverurl = "http://localhost:8000";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -39,7 +40,7 @@ root.render(
       <Route path="/bizzgpt" element={<BizzGPT />} />
       <Route path="/evaluate" element={<Evaluate />} />
       <Route path="/sharktank" element={<Main />} />
-      <Route path="/features" element={<Features   />} />
+      <Route path="/features" element={<Features />} />
       {/* <Route path="/paytm" element={<Paytm/>} /> */}
       <Route path="/room/:roomid" element={<Roompage />} />
       {/* <Route path="/video" element={<Main />} /> */}
@@ -47,6 +48,7 @@ root.render(
       <Route path="/marketplace" element={<Marketplace />} />
       <Route path="/marketplace/post" element={<MarketplacePost />} />
       <Route path="/showcase" element={<Idea />} />
+      <Route path="/showcase/post" element={<ShowcasePost />} />
       <Route path="/news" element={<News />} />
       <Route path="/hello" element={<Carousel />} />
     </Routes>
