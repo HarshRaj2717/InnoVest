@@ -28,10 +28,10 @@ const Carousel = () => {
                     <div className="hg">BIZZGPT</div>
                     <img src={market} className="rounded-box gg" />
                 </Link>
-                <Link to="/showcase" className="carousel-item">
+                {/* <Link to="/showcase" className="carousel-item">
                     <div className="hg">IDEA SHOWCASE</div>
                     <img src={camw} className="rounded-box gg" />
-                </Link>
+                </Link> */}
                 <Link to="/news" className="carousel-item">
                     <div className="hg">NEWS</div>
                     <img src={thumb} className="rounded-box gg" />

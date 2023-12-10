@@ -75,9 +75,9 @@ const Navbar = () => {
           <li>
             <Link to={"/bizzgpt"} className="m-1">BizzGPT</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to={"/showcase"} className="m-1">Idea Showcase</Link>
-          </li>
+          </li> */}
           <li>
             <Link to={"/news"} className="m-1">News</Link>
           </li>
