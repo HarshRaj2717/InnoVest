@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 
 const StartupCard = ({
   name,
@@ -15,6 +16,9 @@ const StartupCard = ({
   const [aiDescription, setAiDescription] = useState("");
 
   async function aiDescRes() {
+    if (aiDescription !== "") {
+      return;
+    }
     try {
       const api_res = await fetch(
         `https://advisorgpt-production.up.railway.app/predict`,
@@ -39,14 +43,16 @@ const StartupCard = ({
   }
 
   function AiDescCard() {
-    useEffect(() => {
-      aiDescRes();
-    }, []);
+    const temp = aiDescRes();
+    // useEffect(() => {
+    // }, []);
     return (
       <div className="fixed inset-0 flex items-center justify-center z-50 overflow-auto bg-black bg-opacity-50">
         <div className="bg-white p-4 rounded shadow-md max-w-fit">
           <h2 className="text-primary text-3xl font-bold mb-4">AI Expert</h2>
-          <p className="text-gray-700 my-4">{aiDescription}</p>
+          <p className="text-gray-700 my-4">
+            <ReactMarkdown>{aiDescription}</ReactMarkdown>
+          </p>
           <button
             className="block btn btn-secondary"
             onClick={() => {
